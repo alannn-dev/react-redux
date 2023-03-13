@@ -12,6 +12,7 @@ import styles from './Counter.module.css';
 
 export function Counter() {
   const count = useSelector(selectCount);
+// const countPlusTwo = useSelector(state => state.counter.value + 2)
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');
 
@@ -40,8 +41,9 @@ export function Counter() {
         <input
           className={styles.textbox}
           aria-label="Set increment amount"
+          /* useState and Local state only used by Counter component : doesn't need to use the store */ 
           value={incrementAmount}
-          onChange={(e) => setIncrementAmount(e.target.value)}
+          onChange={(e) => setIncrementAmount(e.target.value)} 
         />
         <button
           className={styles.button}
